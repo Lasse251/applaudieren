@@ -153,8 +153,9 @@ body {
   background-color: white;
   width: 90%;
   max-width: 500px;
-  height: 40%;
-  max-height: 500px;
+  /* Höhe nicht prozentual, sondern automatisch an Inhalt anpassen */
+  height: auto;
+  min-height: 40%;
   margin: 10px auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -165,6 +166,7 @@ body {
   justify-content: center;
   overflow: auto;
 }
+
 
 .cardText {
   color: black;
@@ -187,12 +189,12 @@ body {
 
 .buttonRow {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 15px;
   margin: 20px 0;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
 }
 
 @media (min-width: 600px) {
@@ -218,6 +220,8 @@ body {
   text-align: center;
   white-space: nowrap;
 }
+
+
 
 .button:hover {
   background-color: #427eff;
@@ -363,4 +367,98 @@ body {
   display: block;
   margin: 5px;
   padding: 0;
+}
+
+/* Minispiele */
+
+.cardMinigame {
+  background-color: white;
+  width: 90%;
+  max-width: 600px;
+  min-height: 180px;
+  margin: 10px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Pferderennen */
+#raceTrack {
+  width: 100%;
+  height: 180px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.horseRow {
+  height: 30px;
+  margin: 15px 0;
+  font-size: 28px;
+  white-space: nowrap;
+  color: white;
+  position: absolute;
+  left: 0;
+  font-size: 28px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Slot */
+.slotContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.reel {
+  font-size: 40px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.einsatz {
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  padding: 12px 24px;
+  background-color: #0051ff;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+  min-width: 150px;
+  text-align: center;
+  white-space: nowrap;
+  appearance: none; /* entfernt Standard-Dropdown-Pfeil */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20fill%3D%22white%22%20height%3D%2220%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2220%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+.einsatz:hover {
+  background-color: #427eff;
 }
