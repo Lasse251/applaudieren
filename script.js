@@ -12,7 +12,7 @@ const cards = [
     "Daumenkönig! Lege deinen Daumen unauffällig auf den Tisch. Der Langsamste muss TRINKWORT.",
     "ADEL! Alle müssen eine Person siezen. Fehler = TRINKWORT.",
     "Privat! Zeige die letzten drei Bilder in deiner Galerie oder TRINKWORT 3 mal.",
-    "Urlaub! Du bist im Urlaub und musst dich an keine Regeln halten.",
+    "Urlaub! Du bist im Urlaub und musst dich an keine Regeln halten für die nächsten 5 Runden.",
     "Teenies! Alle unter 20 Jahren müssen TRINKWORT.",
     "Spielkönig! Der Geräte-Besitzer darf 3 mal TRINKWORT verteilen.",
     "TRINKWORT! Alle müssen ein mal TRINKWORT.",
@@ -77,7 +77,7 @@ let lastCardIndex = -1;
 let lastGameIndex = -1;
 let isFlipped = false;
 let replaceWord = "applaudieren";
-let minigameCooldown = 0;
+let minigameCooldown = 5;
 let minigameActive = true;
 
 // --- DOM ELEMENTE ---
@@ -362,5 +362,6 @@ function drawNewCard() {
         }
     },10000);
 }
+
 
 drawCardBtn.addEventListener('click', drawNewCard);
